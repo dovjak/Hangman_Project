@@ -6,7 +6,7 @@ This project simulates 'Hangman' game by iteratively asking a player for a lette
 
 Completed the ask_letter method. The user is asked to insert a letter and the method checks if a letter is valid in terms of if it is only 1 character, if it a valid letter and if the letter has not been tried in this game session before. If the letter passes the check, the following method of check_letter is called.
 
-'''python
+```
 def ask_letter(self):
         while True:
             letter=input('Enter a single character:')
@@ -20,13 +20,13 @@ def ask_letter(self):
                 break
             else: print('Please enter a character')
         return letter
-'''
+```
 
 ## Milestone 2
 
 Using Object Oriented Programming (OOP) the attributes were intialised. OOP was chosen to due to a number of variables to be updated repeatedly.
 
-'''python
+```
 def __init__(self, word_guessed, num_lives=5):
         self.word_list=word_list
         self.num_lives=num_lives
@@ -40,13 +40,13 @@ def __init__(self, word_guessed, num_lives=5):
         print(f'{self.word_guessed}')
 
         self.list_letters=[]
-'''python
+```
 
 ## Milestone 3
 
 Completed a check_letter method. It checks if the letter guessed by the user is in the word, if not reduces the number of lives left and adds a drawing of a hangman.
 
-'''python
+```
 def check_letter(self) -> None:
         while self.num_lives > 0:
             inputs=self.ask_letter()
@@ -106,5 +106,15 @@ def check_letter(self) -> None:
                 if '_' not in self.word_guessed:
                     print("Congratulations, you won")
                     break
-'''
+```
 
+## Milestone 4
+
+The logic of the game was coded in the play_game function. It mainly calls the check_letter method while the ask_letter medthod is called within.
+
+```
+def play_game(word_list):
+    game = Hangman(word_list, num_lives=5)
+    #game.ask_letter()
+    game.check_letter()
+```
