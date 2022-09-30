@@ -48,15 +48,6 @@ Completed a check_letter method. It checks if the letter guessed by the user is 
 
 '''python
 def check_letter(self) -> None:
-        '''
-        Checks if the letter is in the word.
-        If it is, it replaces the '_' in the word_guessed list with the letter.
-        If it is not, it reduces the number of lives by 1.
-        Parameters:
-        ----------
-        letter: str
-            The letter to be checked
-        '''
         while self.num_lives > 0:
             inputs=self.ask_letter()
             inputs.lower()
